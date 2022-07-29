@@ -1,6 +1,6 @@
+use async_graphql::http::{playground_source, GraphQLPlaygroundConfig};
 use async_graphql::{
-    http::{playground_source, GraphQLPlaygroundConfig},
-    *,
+    Context, EmptySubscription, InputObject, Object, Result, Schema, SimpleObject,
 };
 use async_graphql_axum::{GraphQLRequest, GraphQLResponse};
 use axum::routing::get;
