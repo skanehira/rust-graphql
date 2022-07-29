@@ -13,3 +13,4 @@ async-graphql-warp = "4.0" # If you need to integrate into warp
 async-graphql-tide = "4.0" # If you need to integrate into tide
 tokio = { version = "1.8", features = ["macros", "rt-multi-thread"] }
 raiden = { git = "https://github.com/raiden-rs/raiden-dynamo" }
+xid = "1.0.2"
