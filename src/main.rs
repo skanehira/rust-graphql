@@ -45,7 +45,7 @@ struct Query;
 #[Object]
 impl Query {
     async fn wiki<'ctx>(&self, ctx: &Context<'ctx>, owner: String) -> Result<Option<Vec<Wiki>>> {
-        let dynamodb = ctx.data()?;
+        let dynamodb = ctx.data::<TableWikiClient>()?;
 
         let cond = TableWiki::key_condition(TableWiki::owner()).eq(owner);
         let result: Result<raiden::query::QueryOutput<TableWiki>, raiden::RaidenError> = dynamodb
@@ -57,7 +57,7 @@ impl Query {
 
         match result {
             Ok(output) => {
-                let wikis = Vec::<Wiki>::new();
+                let mut wikis = Vec::<Wiki>::new();
                 for item in output.items {
                     wikis.push(item.into());
                 }
