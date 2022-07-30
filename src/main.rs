@@ -75,8 +75,7 @@ impl Query {
             query = query.filter(TableWiki::filter_expression(TableWiki::category()).eq(category));
         }
 
-        let result: Result<raiden::query::QueryOutput<TableWiki>, raiden::RaidenError> =
-            query.run().await;
+        let result = query.run().await;
 
         match result {
             Ok(output) => {
