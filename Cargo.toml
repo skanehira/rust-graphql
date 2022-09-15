@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 axum = { version = "0.5.13", features = ["headers"] }
 async-graphql-axum = "4.0.5"
-async-graphql = "4.0.5"
+async-graphql = "4.0.6"
 tokio = { version = "1.20.1", features = ["macros", "rt-multi-thread"] }
 raiden = { git = "https://github.com/raiden-rs/raiden-dynamo" }
 xid = "1.0.2"
